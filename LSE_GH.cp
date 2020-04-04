@@ -51,14 +51,52 @@ class LSE
 		int Contar();
 		Nodo *Buscar(int);
 		void Borrar(int);
-};
+;
 
-
-
-
-
-
-
+ void LSE::InsertarI(int a){
+	 if(!Inicio){
+		 Inicio=new Nodo(a);
+		 Fin=Inicio;
+	 }
+	 else {
+		 Nodo Ayuda=new Nodo(a);
+		 Ayuda->Asignasig(Inicio);
+		 Inicio=Ayuda;
+	 }
+ }
+ void LSE::InsertarF(int a){
+	 if(Inicio==NULL){
+		 Inicio=new Nodo(a);
+		 Fin=Inicio;
+	 }
+	 else{
+		 Nodo *Ayudax2=new Nodo(a);
+		 Fin->Asignasig(Ayuda);
+		 Nodo *A=Fin;
+		 Fin=Ayuda;
+		 Fin=Asignasig(a);
+	 }
+ }
+ 
+ void LSE::BorrarI(){
+	 if(!Inicio){
+		 cout<<"Lista vacia"<<endl;}
+	 else{
+		 if(Inicio-<Obtienesig()==NULL){
+			 delete Inicio;
+			 Inicio=NULL;
+		 }
+		 else{
+			 Nodo *Ayudax3=Inicio;
+			 Inicio=Inicio->Obtienesig();
+			 Ayudax3->Asignasig(NULL);
+			 delete Ayudax3;}
+	 }
+ }
+		 
+	 
+		 
+	 
 int main(int argc, const char * argv[])
 {
     
